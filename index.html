@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameInteractive</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="menu">
+    <h1>GAMEINTERACTIVE</h1>
+    <p>Sandbox de bloques</p>
+    <button id="play">JUGAR</button>
+    <div class="help">WASD = mover · Ratón = mirar · Click = romper · Click derecho = colocar · 1-5 = bloques</div>
+  </div>
+
+  <div id="hud">
+    <div id="crosshair">+</div>
+    <div id="info">Vida: 100</div>
+    <div id="hotbar"></div>
+    <div id="message"></div>
+  </div>
+
+  <div id="mobile-controls">
+    <button data-key="w">▲</button>
+    <div>
+      <button data-key="a">◀</button>
+      <button data-key="s">▼</button>
+      <button data-key="d">▶</button>
+    </div>
+  </div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
