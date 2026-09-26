@@ -1,21 +1,137 @@
-*{box-sizing:border-box}
-html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#000;font-family:Arial,sans-serif}
-canvas{display:block}
-#menu{position:fixed;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;text-align:center;background:linear-gradient(#0008,#000b)}
-#menu h1{font-size:clamp(42px,8vw,90px);margin:0 0 8px;text-shadow:0 5px 20px #000}
-#menu p{font-size:22px;margin:0 0 28px}
-#play{border:0;border-radius:10px;padding:16px 55px;font-size:22px;font-weight:bold;cursor:pointer;background:#fff;color:#111}
-#play:hover{transform:scale(1.04)}
-.help{margin-top:22px;font-size:14px;opacity:.85;max-width:700px;padding:0 15px}
-#hud{display:none;position:fixed;inset:0;z-index:5;pointer-events:none;color:#fff}
-#crosshair{position:absolute;left:50%;top:50%;transform:translate(-50%,-55%);font-size:30px;text-shadow:0 1px 4px #000}
-#info{position:absolute;left:15px;top:15px;background:#0008;padding:8px 12px;border-radius:7px}
-#hotbar{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:5px}
-.slot{width:58px;height:58px;border:3px solid #777;background:#222b;border-radius:6px;display:flex;align-items:center;justify-content:center;position:relative}
-.slot.selected{border-color:white;transform:translateY(-5px)}
-.slot span{position:absolute;left:4px;top:2px;font-size:12px}
-.swatch{width:32px;height:32px;border-radius:3px}
-#message{position:absolute;top:70px;left:50%;transform:translateX(-50%);background:#0009;padding:8px 13px;border-radius:7px;opacity:0;transition:opacity .2s}
-#mobile-controls{display:none;position:fixed;z-index:8;bottom:90px;left:20px;pointer-events:none}
-#mobile-controls button{pointer-events:auto;width:50px;height:50px;margin:2px;border:0;border-radius:10px;background:#ffffff55;color:white;font-size:20px}
-@media(max-width:700px){#mobile-controls{display:block}.help{font-size:12px}.slot{width:48px;height:48px}}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #000;
+    font-family: Arial, sans-serif;
+}
+
+canvas {
+    display: block;
+}
+
+#menu {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#4da6ff, #9bdcff);
+    color: white;
+    text-align: center;
+}
+
+#menu h1 {
+    font-size: 48px;
+    margin: 0 0 10px;
+    text-shadow: 3px 3px #333;
+}
+
+#menu p {
+    font-size: 20px;
+}
+
+#username {
+    width: 280px;
+    padding: 14px;
+    margin: 20px 0 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    text-align: center;
+}
+
+#playButton {
+    width: 280px;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #35b94a;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#playButton:hover {
+    background: #2c9e3d;
+}
+
+#connectionStatus {
+    font-size: 15px !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#crosshair {
+    position: fixed;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 1px 1px black;
+    pointer-events: none;
+}
+
+#topInfo {
+    position: fixed;
+    z-index: 5;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 17px;
+    text-shadow: 2px 2px #000;
+    pointer-events: none;
+}
+
+#hotbar {
+    position: fixed;
+    z-index: 5;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.slot {
+    width: 55px;
+    height: 55px;
+    border: 3px solid #555;
+    background: rgba(30, 30, 30, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.slot.selected {
+    border-color: white;
+}
+
+#help {
+    position: fixed;
+    z-index: 5;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 12px;
+    text-shadow: 2px 2px #000;
+    white-space: nowrap;
+    pointer-events: none;
+}

@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GameInteractive</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Interactive</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="menu">
-    <h1>GAMEINTERACTIVE</h1>
-    <p>Sandbox de bloques</p>
-    <button id="play">JUGAR</button>
-    <div class="help">WASD = mover · Ratón = mirar · Click = romper · Click derecho = colocar · 1-5 = bloques</div>
-  </div>
 
-  <div id="hud">
-    <div id="crosshair">+</div>
-    <div id="info">Vida: 100</div>
-    <div id="hotbar"></div>
-    <div id="message"></div>
-  </div>
+    <div id="menu">
+        <h1>GAME INTERACTIVE</h1>
+        <p>Juego multijugador</p>
 
-  <div id="mobile-controls">
-    <button data-key="w">▲</button>
-    <div>
-      <button data-key="a">◀</button>
-      <button data-key="s">▼</button>
-      <button data-key="d">▶</button>
+        <input id="username" type="text" maxlength="16" placeholder="Tu nombre">
+
+        <button id="playButton">JUGAR</button>
+
+        <p id="connectionStatus">Desconectado</p>
     </div>
-  </div>
 
-  <script type="importmap">
-  {
-    "imports": {
-      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
-      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
-    }
-  }
-  </script>
-  <script type="module" src="game.js"></script>
+    <div id="gameUI" class="hidden">
+        <div id="crosshair">+</div>
+
+        <div id="topInfo">
+            <span id="playerName"></span>
+            <span id="playersOnline">Jugadores: 0</span>
+        </div>
+
+        <div id="hotbar">
+            <div class="slot selected">🧱</div>
+            <div class="slot">🌱</div>
+            <div class="slot">🪨</div>
+            <div class="slot">🪵</div>
+            <div class="slot">⬜</div>
+        </div>
+
+        <div id="help">
+            WASD mover · ESPACIO saltar · Click izquierdo romper · Click derecho colocar · ESC liberar ratón
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script src="game.js"></script>
+
 </body>
 </html>

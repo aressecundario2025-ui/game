@@ -1,0 +1,12 @@
+{
+  "name": "game-interactive",
+  "version": "1.0.0",
+  "description": "Juego 3D multijugador estilo Minecraft",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
